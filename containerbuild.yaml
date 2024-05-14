@@ -7,7 +7,7 @@ pool:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: 'docker_h20andrew' # Replace with your container registry connection name
+    containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
     repository: 'h20andrew/aquatest' # Replace with your Docker repository name
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile' # Replace with the path to your Dockerfile
