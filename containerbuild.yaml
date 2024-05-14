@@ -5,7 +5,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: aquasecScanner@4
+
+
+- task: Docker@2
+  displayName: 'Build Docker image'
+  inputs:
+    containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
+    repository: 'h20andrew/adotest' # Replace with your Docker repository name
+    command: 'build'
+    Dockerfile: 'Dockerfile' # Replace with the path to your Dockerfile
+    tags: 'latest' # Replace with the desired tag for your Docker image
 - task: aquasecScanner@4
   inputs:
     image: 'adotest'
@@ -20,9 +29,9 @@ steps:
     connection: 'ado_test'
     composefile: 'Dockerfile'
 - task: Docker@2
+  displayName: 'Push Docker image to registry'
   inputs:
     containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
     repository: 'h20andrew/adotest' # Replace with your Docker repository name
-    command: 'buildAndPush'
-    Dockerfile: 'Dockerfile' # Replace with the path to your Dockerfile
-    tags: 'latest' # Replace with the desired tag for your Docker image
+    command: 'push'
+    tags: 'latest'
