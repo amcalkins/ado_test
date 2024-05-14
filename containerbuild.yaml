@@ -1,4 +1,18 @@
 trigger:
+- task: aquasecScanner@4
+  inputs:
+    image: 'adotest'
+    scanType: 'local'
+    containerRuntime: 'docker'
+    register: true
+    hideBase: false
+    showNegligible: false
+    windowsScannerVersion: '6.5.0'
+    connection: 'ado_test'
+    composefile: 'Dockerfile'
+    customFlags: '--direct-cc'
+    scanMalware: true
+    showWillNotFix: true
 - main
 
 pool:
