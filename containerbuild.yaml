@@ -5,8 +5,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
-
+- task: Docker@2
+  displayName: 'Pull Scanner image'
+  inputs:
+    containerRegistry: 'aquaregistry'
+    repository: 'scanner'
+    command: 'pull'
+    tags: '2022.4.46'
 - task: Docker@2
   displayName: 'Build Docker image'
   inputs:
