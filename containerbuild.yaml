@@ -1,4 +1,10 @@
 trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
 - task: aquasecScanner@4
   inputs:
     image: 'adotest'
@@ -13,12 +19,6 @@ trigger:
     customFlags: '--direct-cc'
     scanMalware: true
     showWillNotFix: true
-- main
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
