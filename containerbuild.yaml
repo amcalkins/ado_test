@@ -7,8 +7,8 @@ pool:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: 'YourContainerRegistryConnection' # Replace with your container registry connection name
+    containerRegistry: 'docker_h20andrew' # Replace with your container registry connection name
     repository: 'h20andrew/aquatest' # Replace with your Docker repository name
     command: 'buildAndPush'
-    Dockerfile: 'path/to/your/Dockerfile' # Replace with the path to your Dockerfile
+    Dockerfile: 'Dockerfile' # Replace with the path to your Dockerfile
     tags: 'latest' # Replace with the desired tag for your Docker image
