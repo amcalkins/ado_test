@@ -10,8 +10,9 @@ steps:
   inputs:
     containerRegistry: 'aquaregistry'
     repository: 'scanner'
-    command: 'pull registry.aquasec.com/scanner:2022.4.46'
+    command: 'pull'
     tags: '2022.4.46'
+    arguments:  "registry.aquasec.com/scanner:2022.4.46"
 - task: Docker@2
   displayName: 'Build Docker image'
   inputs:
