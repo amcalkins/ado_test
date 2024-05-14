@@ -6,19 +6,19 @@ pool:
 
 steps:
 - task: aquasecScanner@4
+- task: aquasecScanner@4
   inputs:
     image: 'adotest'
     scanType: 'local'
     containerRuntime: 'docker'
-    register: true
+    register: false
     hideBase: false
-    showNegligible: false
+    showNegligible: true
     windowsScannerVersion: '6.5.0'
+    scanner: 'registry.aquasec.com/scanner:2022.4.46'
+    runOptions: '-e SCALOCK_LOG_LEVEL=DEBUG'
     connection: 'ado_test'
     composefile: 'Dockerfile'
-    customFlags: '--direct-cc'
-    scanMalware: true
-    showWillNotFix: true
 - task: Docker@2
   inputs:
     containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
