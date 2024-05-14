@@ -26,3 +26,4 @@ steps:
     customFlags: '--direct-cc'
     scanMalware: true
     showWillNotFix: true
+    shell: /bin/bash
