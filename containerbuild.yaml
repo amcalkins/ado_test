@@ -21,6 +21,10 @@ steps:
     command: 'build'
     Dockerfile: 'Dockerfile' # Replace with the path to your Dockerfile
     tags: 'latest' # Replace with the desired tag for your Docker image
+- task: Docker@2
+  displayname: 'list local docker images'
+  inputs:
+    command: 'docker images'
 - task: aquasecScanner@4
   inputs:
     image: 'adotest'
