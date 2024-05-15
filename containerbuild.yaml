@@ -24,7 +24,7 @@ steps:
 - task: Docker@2
   displayName: 'list local docker images'
   inputs:
-    command: 'docker images'
+    command: 'images'
 - task: aquasecScanner@4
   inputs:
     image: 'adotest'
