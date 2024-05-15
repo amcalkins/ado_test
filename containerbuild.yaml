@@ -30,7 +30,7 @@ steps:
   inputs:
     containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
     repository: 'h20andrew/adotest' # Replace with your Docker repository name
-    image: 'adotest'
+    image: 'h20andrew/adotest'
     scanType: 'local'
     containerRuntime: 'docker'
     register: false
