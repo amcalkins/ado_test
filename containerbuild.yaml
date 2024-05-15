@@ -16,8 +16,8 @@ steps:
 - task: Docker@2
   displayName: 'Build Docker image'
   inputs:
-   #containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
-    #repository: 'h20andrew/adotest' # Replace with your Docker repository name
+    containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
+    repository: 'h20andrew/adotest' # Replace with your Docker repository name
     image: adotest
     command: 'build'
     Dockerfile: 'Dockerfile' # Replace with the path to your Dockerfile
@@ -28,6 +28,8 @@ steps:
     command: 'images'
 - task: aquasecScanner@4
   inputs:
+    containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
+    repository: 'h20andrew/adotest' # Replace with your Docker repository name
     image: 'adotest'
     scanType: 'local'
     containerRuntime: 'docker'
