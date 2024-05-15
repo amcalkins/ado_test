@@ -27,6 +27,7 @@ steps:
     command: 'images'
 - task: aquasecScanner@4
   inputs:
+    repository: 'h20andrew/adotest'
     image: 'adotest'
     scanType: 'local'
     containerRuntime: 'docker'
