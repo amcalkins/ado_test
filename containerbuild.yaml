@@ -33,7 +33,7 @@ steps:
     image: 'docker.io/h20andrew/adotest'
     scanType: 'local'
     containerRuntime: 'docker'
-    register: true # set to true to register image to the console
+    register: false # set to true to register image to the console
     hideBase: false
     showNegligible: true
     windowsScannerVersion: '6.5.0'
