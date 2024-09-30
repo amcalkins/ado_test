@@ -12,7 +12,7 @@ steps:
     repository: 'scanner'
     command: 'pull'
     tags: '2404.30.6'
-    arguments:  "registry.aquasec.com/scanner:2404.30.6"
+    arguments:  "registry.aquasec.com/scanner:2022.4"
 - task: Docker@2
   displayName: 'Build Docker image'
   inputs:
