@@ -38,7 +38,7 @@ steps:
     showNegligible: true
     windowsScannerVersion: '6.5.0'
     scanner: 'registry.aquasec.com/scanner:2022.4'
-    runOptions: '-e SCALOCK_LOG_LEVEL=DEBUG'
+    runOptions: '-e SCALOCK_LOG_LEVEL=DEBUG --register'
     connection: 'ado_test'
 - task: Docker@2
   displayName: 'Push Docker image to registry'
