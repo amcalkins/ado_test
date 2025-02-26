@@ -28,7 +28,7 @@ steps:
     command: 'images'
 - task: aquasecScanner@4
   inputs:
-    containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
+    #containerRegistry: 'andrewc_dockerhub' # Replace with your container registry connection name
     #repository: 'h20andrew/adotest' # Replace with your Docker repository name
     image: 'docker.io/h20andrew/adotest'
     scanType: 'local'
