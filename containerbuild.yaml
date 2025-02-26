@@ -32,8 +32,8 @@ steps:
     repository: 'h20andrew/adotest' # Replace with your Docker repository name
     image: 'docker.io/h20andrew/adotest'
     scanType: 'local'
-    register: true # set to true to register image to the console
     containerRuntime: 'docker'
+    register: true # set to true to register image to the console
     hideBase: false
     showNegligible: true
     windowsScannerVersion: '6.5.0'
