@@ -34,6 +34,7 @@ steps:
     scanType: 'local'
     containerRuntime: 'docker'
     register: true # set to true to register image to the console
+    registry: direct
     hideBase: false
     showNegligible: true
     windowsScannerVersion: '6.5.0'
