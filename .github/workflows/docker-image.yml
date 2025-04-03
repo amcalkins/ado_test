@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: docker login
-      run: docker login registry.aquasec.com -u $AQUAPULLUSER -p $AQUAPULLPASSWORD
+      run: docker login registry.aquasec.com --username $AQUAPULLUSER --password $AQUAPULLPASSWORD
     - name: pull scanner image
       run: docker pull registry.aquasec.com/scanner:saas-latest
       
