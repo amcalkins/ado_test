@@ -14,12 +14,17 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: Log in to Docker
-      uses: docker/login-action@v2
-      with:
-        registry: registry.aquasec.com
-        username: $AQUAPULLUSER
-        password: $AQUAPULLPASSWORD
+    - name: Debug Docker login
+      run: |
+        set -x  # Enable shell debugging
+        docker login registry.aquasec.com --username $AQUAPULLUSER --password $AQUAPULLPASSWORD 2>&1 | tee docker_login_debug.log
+        set +x  # Disable shell debugging
+#    - name: Log in to Docker
+#      uses: docker/login-action@v2
+#      with:
+#        registry: registry.aquasec.com
+#        username: $AQUAPULLUSER
+#        password: $AQUAPULLPASSWORD
       
   build:
 
