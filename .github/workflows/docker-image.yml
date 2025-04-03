@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag adotestimage:$(date "+%Y-%m-%d %H")
+      run: docker build . --file Dockerfile --tag adotestimage:$(date +%Y%m%d%H)
 
   scan:
 
@@ -34,4 +34,4 @@ jobs:
       run: docker pull registry.aquasec.com/scanner:latest-saas
     - uses: actions/checkout@v4
     - name: scan the docker image using aqua trivy
-      run: docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:latest-saas scan --local -H https://e11d515bfb.cloud.aquasec.com/ -A d799b2bf5aa0411ad9337d1df585ff8b0acedd3d3cb93113ee1e79db591505db adotestimage:$(date "+%Y-%m-%d %H")
+      run: docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:latest-saas scan --local -H https://e11d515bfb.cloud.aquasec.com/ -A d799b2bf5aa0411ad9337d1df585ff8b0acedd3d3cb93113ee1e79db591505db adotestimage:$(date +%Y%m%d%H)
