@@ -42,4 +42,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: scan the docker image using aqua trivy
-      run: docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:saas-latest scan --local -U $AQUAPULLUSER -P $AQUAPW adotestimage:$(date +%s)
+      run: docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:saas-latest scan --local -A d799b2bf5aa0411ad9337d1df585ff8b0acedd3d3cb93113ee1e79db591505db adotestimage:$(date +%s)
