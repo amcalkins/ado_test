@@ -26,7 +26,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: pull dat image
-      run: docker pull registry.aquasec.com/scanner:saas-latest
+      run: docker pull registry.aquasec.com/scanner:latest-saas
       
   build:
 
@@ -44,4 +44,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: scan the docker image using aqua trivy
-      run: docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:saas-latest scan --local -A d799b2bf5aa0411ad9337d1df585ff8b0acedd3d3cb93113ee1e79db591505db adotestimage:$(date +%s)
+      run: docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:latest-saas scan --local -A d799b2bf5aa0411ad9337d1df585ff8b0acedd3d3cb93113ee1e79db591505db adotestimage:$(date +%s)
