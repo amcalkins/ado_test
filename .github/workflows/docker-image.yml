@@ -25,6 +25,8 @@ jobs:
         registry: registry.aquasec.com
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: pull dat image
+      run: docker pull registry.aquasec.com/scanner:saas-latest
       
   build:
 
