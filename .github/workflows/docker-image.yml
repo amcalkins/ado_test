@@ -12,11 +12,13 @@ jobs:
   pull:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: docker login
-      run: docker login registry.aquasec.com --username $AQUAPULLUSER --password $AQUAPULLPASSWORD
-    - name: pull scanner image
-      run: docker pull registry.aquasec.com/scanner:saas-latest
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Log in to Docker
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.AQUAPULLUSER }}
+        password: ${{ secrets.AQUAPULLPASSWORD }}
       
   build:
 
