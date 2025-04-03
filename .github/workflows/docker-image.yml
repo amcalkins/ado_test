@@ -1,0 +1,35 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "actiontest" ]
+  pull_request:
+    branches: [ "actiontest" ]
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: docker login
+      run: docker login registry.aquasec.com -u -p
+    - name: pull scanner image
+      run: docker pull registry.aquasec.com/scanner:saas-latest
+      
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+  scan:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: scan the docker image using aqua trivy
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
