@@ -18,8 +18,8 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: registry.aquasec.com
-        username: ${{ secrets.AQUAPULLUSER }}
-        password: ${{ secrets.AQUAPULLPASSWORD }}
+        username: $AQUAPULLUSER
+        password: $AQUAPULLPASSWORD
       
   build:
 
