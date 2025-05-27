@@ -11,8 +11,8 @@ steps:
     containerRegistry: 'aquaregistry'
     repository: 'scanner'
     command: 'pull'
-    tags: '2504.1.13'
-    arguments:  "registry.aquasec.com/scanner:latest-saas"
+    tags: '2022.4.760'
+    arguments:  "registry.aquasec.com/scanner:2022.4"
 - task: Docker@2
   displayName: 'Build Docker image'
   inputs:
@@ -38,7 +38,7 @@ steps:
     hideBase: false
     showNegligible: true
     windowsScannerVersion: '6.5.0'
-    scanner: 'registry.aquasec.com/scanner:latest-saas'
+    scanner: 'registry.aquasec.com/scanner:2022.4'
     runOptions: '-e SCALOCK_LOG_LEVEL=DEBUG'
     connection: 'ado_test'
 - task: Docker@2
