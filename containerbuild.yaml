@@ -38,7 +38,7 @@ steps:
     hideBase: false
     showNegligible: true
     windowsScannerVersion: '6.5.0'
-    scanner: 'registry.aquasec.com/scanner:2022.4'
+    scanner: 'registry.aquasec.com/scanner:latest-saas'
     runOptions: '-e SCALOCK_LOG_LEVEL=DEBUG'
     connection: 'ado_test'
 - task: Docker@2
