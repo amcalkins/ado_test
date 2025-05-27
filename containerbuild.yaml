@@ -11,8 +11,8 @@ steps:
     containerRegistry: 'aquaregistry'
     repository: 'scanner'
     command: 'pull'
-    tags: '2022.4.720'
-    arguments:  "registry.aquasec.com/scanner:2022.4"
+    tags: '2504.1.13'
+    arguments:  "registry.aquasec.com/scanner:saas-latest"
 - task: Docker@2
   displayName: 'Build Docker image'
   inputs:
