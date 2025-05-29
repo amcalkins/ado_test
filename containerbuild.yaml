@@ -35,7 +35,7 @@ steps:
     containerRuntime: 'docker'
     register: true # set to true to register image to the console
     registry: AndrewRegistry-Blue
-    registerCompliant: false
+    registerCompliant: true
     hideBase: false
     showNegligible: true
     windowsScannerVersion: '6.5.0'
